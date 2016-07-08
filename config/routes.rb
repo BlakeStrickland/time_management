@@ -1,5 +1,7 @@
 Rails.application.routes.draw do
 
+  get 'dashboard/main'
+
   resources :notebooks
   # get 'notebooks/show'
   # get 'notebooks/index'
