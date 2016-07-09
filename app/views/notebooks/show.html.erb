@@ -1,2 +1,11 @@
-<h1>Notebooks#show</h1>
-<p>Find me in app/views/notebooks/show.html.erb</p>
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Subject:</strong>
+  <%= @notebook.subject %>
+</p>
+
+
+
+<%= link_to 'Edit', edit_notebook_path(@notebook) %> |
+<%= link_to 'Back', notebooks_path %>

@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
 
+  resources :notebooks
   get 'dashboard/main'
 
   resources :notebooks
