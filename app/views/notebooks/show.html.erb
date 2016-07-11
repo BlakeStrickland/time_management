@@ -3,10 +3,8 @@
 <h2 class="subject">  <%= @notebook.subject %> </h2>
 
 
-<%= link_to 'Edit', edit_notebook_path(@notebook) %> |
-<%= link_to 'Back', notebooks_path %>
 
-<div class="notes">
+<div class="leftSide">
   <div class="noteForm">
     <%= form_for(@note) do |f| %>
       <% if @note.errors.any? %>
@@ -42,7 +40,7 @@
 </div>
 
 
-<div class="keyword">
+<div class="rightSide">
   <div class="keywordForm">
     <%= form_for(@keyword) do |f| %>
       <% if @keyword.errors.any? %>
@@ -79,9 +77,8 @@
       <td><%= link_to 'Destroy', keyword, method: :delete, data: { confirm: 'Are you sure?' } %></td>
     </tr>
   <% end %>
-</div>
+  <%= link_to 'New Keyword', new_keyword_path %>
 
-<div class="question">
   <div class="questionForm">
     <%= form_for(@question) do |f| %>
       <% if @question.errors.any? %>
@@ -114,8 +111,12 @@
       <td><%= link_to 'Destroy', question, method: :delete, data: { confirm: 'Are you sure?' } %></td>
     </tr>
   <% end %>
+  <%= link_to 'New Question', new_question_path %>
+
 </div>
-<p>
-<%= link_to 'New Keyword', new_keyword_path %>
-<%= link_to 'New Question', new_question_path %>
-</p>
+
+
+<div id="linkBack">
+  <%= link_to 'Edit This Notebook', edit_notebook_path(@notebook) %> |
+  <%= link_to 'Back to Index', notebooks_path %>
+</div>

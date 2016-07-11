@@ -1,3 +1,29 @@
 // Place all the styles related to the Notebooks controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+#linkBack {
+  text-align: center;
+  margin-top: 95%;
+}
+
+.leftSide {
+  margin-left: 3%;
+  max-width: 55%;
+  float: left;
+
+}
+
+.rightSide {
+  margin-right: 3%;
+  max-width: 55%;
+  float: right;
+}
+
+.questionForm {
+  margin-top: 20%;
+}
+
+.subject {
+  text-align: center;
+}
