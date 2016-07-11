@@ -1,5 +1,9 @@
 Rails.application.routes.draw do
 
+  resources :questions
+  resources :keywords
+  resources :keywords
+  resources :models
   resources :notebooks
   get 'dashboard/main'
 
