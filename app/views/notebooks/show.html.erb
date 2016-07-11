@@ -1,11 +1,41 @@
 <p id="notice"><%= notice %></p>
 
-<p>
-  <strong>Subject:</strong>
-  <%= @notebook.subject %>
-</p>
-
+<h2 class="subject">  <%= @notebook.subject %> </h2>
 
 
 <%= link_to 'Edit', edit_notebook_path(@notebook) %> |
 <%= link_to 'Back', notebooks_path %>
+
+
+<%= form_for(@keyword) do |f| %>
+  <% if @keyword.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@keyword.errors.count, "error") %> prohibited this keyword from being saved:</h2>
+
+      <ul>
+      <% @keyword.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :word %><br>
+    <%= f.text_field :word %>
+  </div>
+  <div class="field">
+    <%= f.label :definition %><br>
+    <%= f.text_area :definition %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>
+
+
+
+<p>
+<%= link_to 'New Keyword', new_keyword_path %>
+<%= link_to 'New Question', new_question_path %>
+</p>

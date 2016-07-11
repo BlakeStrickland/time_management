@@ -10,6 +10,10 @@ class NotebooksController < ApplicationController
   # GET /notebooks/1
   # GET /notebooks/1.json
   def show
+    @keywords = Keyword.all
+    @questions = Question.all
+    @keyword = Keyword.new
+    @question = Question.new
   end
 
   # GET /notebooks/new
