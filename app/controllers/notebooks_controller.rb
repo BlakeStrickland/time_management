@@ -12,8 +12,10 @@ class NotebooksController < ApplicationController
   def show
     @keywords = Keyword.all
     @questions = Question.all
+    @notes = Note.all
     @keyword = Keyword.new
     @question = Question.new
+    @note = Note.new
   end
 
   # GET /notebooks/new
