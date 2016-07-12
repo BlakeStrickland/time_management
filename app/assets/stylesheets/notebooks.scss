@@ -8,14 +8,14 @@
 }
 
 .leftSide {
-  margin-left: 3%;
+  margin-left: 5%;
   max-width: 55%;
   float: left;
 
 }
 
 .rightSide {
-  margin-right: 3%;
+  margin-right: 5%;
   max-width: 55%;
   float: right;
 }
@@ -26,4 +26,14 @@
 
 .subject {
   text-align: center;
+}
+
+textarea {
+    width: 300px;
+    height: 150px;
+}
+
+input {
+  width:300px;
+  height: 100px;
 }
