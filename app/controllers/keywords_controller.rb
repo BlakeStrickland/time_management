@@ -28,7 +28,7 @@ class KeywordsController < ApplicationController
 
     respond_to do |format|
       if @keyword.save
-        format.html { redirect_to @keyword, notice: 'Keyword was successfully created.' }
+        format.html { redirect_back fallback_location: { action: "show", id: @keyword.notebook_id }, notice: 'Keyword was successfully created.' }
         format.json { render :show, status: :created, location: @keyword }
       else
         format.html { render :new }
