@@ -6,7 +6,7 @@
 
 <div class="leftSide">
   <div class="noteForm">
-    <%= form_for(@note) do |f| %>
+    <%= form_for(@note, remote: true) do |f| %>
       <% if @note.errors.any? %>
         <div id="error_explanation">
           <h2><%= pluralize(@note.errors.count, "error") %> prohibited this note from being saved:</h2>
@@ -22,6 +22,9 @@
       <div class="field">
         <h4>Note</h4><br>
         <%= f.text_area :note %>
+      </div>
+      <div class="field">
+        <%= f.hidden_field :notebook_id, :value => @notebook.id  %>
       </div>
       <div class="actions">
         <%= f.submit %>
@@ -42,7 +45,7 @@
 
 <div class="rightSide">
   <div class="keywordForm">
-    <%= form_for(@keyword) do |f| %>
+    <%= form_for(@keyword, remote: true) do |f| %>
       <% if @keyword.errors.any? %>
         <div id="error_explanation">
           <h2><%= pluralize(@keyword.errors.count, "error") %> prohibited this keyword from being saved:</h2>
@@ -80,7 +83,7 @@
   <%= link_to 'New Keyword', new_keyword_path %>
 
   <div class="questionForm">
-    <%= form_for(@question) do |f| %>
+    <%= form_for(@question, remote: true) do |f| %>
       <% if @question.errors.any? %>
         <div id="error_explanation">
           <h2><%= pluralize(@question.errors.count, "error") %> prohibited this question from being saved:</h2>
