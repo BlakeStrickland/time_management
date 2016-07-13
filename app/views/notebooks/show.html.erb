@@ -20,7 +20,7 @@
       <% end %>
 
       <div class="field">
-        <%= f.label :note %><br>
+        <h4>Note</h4><br>
         <%= f.text_area :note %>
       </div>
       <div class="actions">
@@ -30,12 +30,12 @@
   </div>
 
   <% @notes.each do |note| %>
-    <tr>
-      <td><%= note.note %></td>
-      <td><%= link_to 'Show', note %></td>
+    <p class="noteDescription"><tr>
+      <td><%= note.note %></td></p>
+      <p class="showEditDestroy"><td><%= link_to 'Show', note %></td>
       <td><%= link_to 'Edit', edit_note_path(note) %></td>
       <td><%= link_to 'Destroy', note, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-    </tr>
+    </tr></p>
   <% end %>
 </div>
 
