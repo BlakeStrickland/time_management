@@ -5,19 +5,14 @@
 
 
 <div class="leftSide">
-  <div class="noteForm">
-    <%= render "note" %>
-  </div>
-
-  <div class="notesDiv"> </div>
+  <%= link_to "New Note", new_note_path, remote: true%>
+<div class="notesDiv">
   <% @notes.each do |note| %>
-    <p class="noteDescription"><tr>
-      <td><%= note.note %></td></p>
-      <p class="showEditDestroy"><td><%= link_to 'Show', note %></td>
-      <td><%= link_to 'Edit', edit_note_path(note) %></td>
-      <td><%= link_to 'Destroy', note, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-    </tr></p>
+    <div class="noteDetails"> <%= render partial: "notes", locals: {note: note} %> </div>
   <% end %>
+ </div>
+  <div class="notesForm"> </div>
+
 </div>
 
 

@@ -34,6 +34,7 @@ class NotebooksController < ApplicationController
 
     respond_to do |format|
       if @notebook.save
+        format.js { redirect_to @notebook, notice: 'Notebook was successfully created.' }
         format.html { redirect_to @notebook, notice: 'Notebook was successfully created.' }
         format.json { render :show, status: :created, location: @notebook }
       else
@@ -48,6 +49,7 @@ class NotebooksController < ApplicationController
   def update
     respond_to do |format|
       if @notebook.update(notebook_params)
+        format.js
         format.html { redirect_to @notebook, notice: 'Notebook was successfully updated.' }
         format.json { render :show, status: :ok, location: @notebook }
       else
@@ -62,6 +64,7 @@ class NotebooksController < ApplicationController
   def destroy
     @notebook.destroy
     respond_to do |format|
+      format.js
       format.html { redirect_to notebooks_url, notice: 'Notebook was successfully destroyed.' }
       format.json { head :no_content }
     end
