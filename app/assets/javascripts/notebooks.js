@@ -1,2 +1,1 @@
-$('.noteForm').html("<%= j (render 'form') %>");
-$('.noteForm').slideDown(350);
+$( ".notesDiv" ).append( "<%= j(render :form %>" );
