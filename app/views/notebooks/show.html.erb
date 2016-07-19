@@ -22,7 +22,6 @@
       <% if @keyword.errors.any? %>
         <div id="error_explanation">
           <h2><%= pluralize(@keyword.errors.count, "error") %> prohibited this keyword from being saved:</h2>
-
           <ul>
           <% @keyword.errors.full_messages.each do |message| %>
             <li><%= message %></li>
@@ -44,7 +43,7 @@
       </div>
     <% end %>
   </div>
-  <% @keywords.each do |keyword| %>
+  <!-- <% @keywords.each do |keyword| %>
     <tr>
       <td><%= keyword.word %></td>
       <td><%= keyword.definition %></td>
@@ -52,8 +51,10 @@
       <td><%= link_to 'Edit', edit_keyword_path(keyword) %></td>
       <td><%= link_to 'Destroy', keyword, method: :delete, data: { confirm: 'Are you sure?' } %></td>
     </tr>
-  <% end %>
+  <% end %> -->
   <%= link_to 'New Keyword', new_keyword_path %>
+
+  <div class="keywordDiv"></div>
 
   <div class="questionForm">
     <%= form_for(@question, remote: true) do |f| %>
