@@ -28,9 +28,11 @@ class KeywordsController < ApplicationController
 
     respond_to do |format|
       if @keyword.save
+        format.js
         format.html { redirect_back fallback_location: { action: "show", id: @keyword.notebook_id }, notice: 'Keyword was successfully created.' }
         format.json { render :show, status: :created, location: @keyword }
       else
+        format.js
         format.html { render :new }
         format.json { render json: @keyword.errors, status: :unprocessable_entity }
       end
@@ -42,9 +44,11 @@ class KeywordsController < ApplicationController
   def update
     respond_to do |format|
       if @keyword.update(keyword_params)
+        format.js
         format.html { redirect_to @keyword, notice: 'Keyword was successfully updated.' }
         format.json { render :show, status: :ok, location: @keyword }
       else
+        format.js
         format.html { render :edit }
         format.json { render json: @keyword.errors, status: :unprocessable_entity }
       end
@@ -56,6 +60,7 @@ class KeywordsController < ApplicationController
   def destroy
     @keyword.destroy
     respond_to do |format|
+      format.js 
       format.html { redirect_to keywords_url, notice: 'Keyword was successfully destroyed.' }
       format.json { head :no_content }
     end
